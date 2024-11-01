@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Lista de Livros - Biblioteca Amoras</title>
+    <title>Categorias de Livros - Biblioteca Amoras</title>
     <style>
         /* Reset básico */
         * {
@@ -15,13 +15,13 @@
 
         body {
             font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            color: #ae1641;
+            background-color: #ae1641;
+            color: #fff;
         }
 
         header {
-            background-color: #ae1641;
-            color: #fff;
+            background-color: #fff;
+            color: #ae1641;
             padding: 1rem;
             display: flex;
             justify-content: space-between;
@@ -42,7 +42,7 @@
         }
 
         .navbar ul li a {
-            color: #fff;
+            color: #ae1641;
             text-decoration: none;
         }
 
@@ -50,30 +50,30 @@
             padding: 2rem;
         }
 
-        .book-list {
+        .category-list {
             list-style-type: none;
         }
 
-        .book-list li {
+        .category-list li {
             padding: 1rem;
-            background-color: #fff;
-            border: 1px solid #ddd;
+            background-color: #ae1641;
+            border: 1px solid #ae1641;
             margin-bottom: 1rem;
         }
 
-        .book-list h3 {
+        .category-list h3 {
             font-size: 1.2rem;
-            color: #ae1641;
+            color: #fff;
         }
 
-        .book-list p {
+        .category-list p {
             font-size: 1rem;
-            color: #ee3166;
+            color: #fff;
         }
 
         footer {
-            background-color: #ae1641;
-            color: white;
+            background-color: #fff;
+            color: #ae1641;
             text-align: center;
             padding: 1rem;
             margin-top: 2rem;
@@ -87,31 +87,32 @@
             <h1>Biblioteca Amoras</h1>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="categorias.html">Categorias</a></li>
+                <li><a href="categorias.html">Categorias de Livros</a></li>
                 <li><a href="contato.html">Contato</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h2>Lista Completa de Livros</h2>
-        <ul class="book-list">
+        <h2>Lista de Categorias de Livros</h2>
+        <ul class="category-list">
             <li>
-                <h3>Título do Livro 1</h3>
-                <p>Autor: Autor Exemplo</p>
-                <p>Descrição: Este é um breve resumo do Livro 1.</p>
+                <h3>Ficção</h3>
+                <p>Descrição: Livros que exploram narrativas imaginativas e fictícias.</p>
             </li>
             <li>
-                <h3>Título do Livro 2</h3>
-                <p>Autor: Autor Exemplo</p>
-                <p>Descrição: Este é um breve resumo do Livro 2.</p>
+                <h3>Biografia</h3>
+                <p>Descrição: Livros que narram a vida de pessoas inspiradoras e marcantes.</p>
             </li>
             <li>
-                <h3>Título do Livro 3</h3>
-                <p>Autor: Autor Exemplo</p>
-                <p>Descrição: Este é um breve resumo do Livro 3.</p>
+                <h3>História</h3>
+                <p>Descrição: Livros que abordam eventos históricos e contextos passados.</p>
             </li>
-            <!-- Adicionar mais livros conforme necessário -->
+            <li>
+                <h3>Ciência</h3>
+                <p>Descrição: Livros que explicam conceitos e descobertas científicas.</p>
+            </li>
+            <!-- Adicionar mais categorias conforme necessário -->
         </ul>
     </main>
 
