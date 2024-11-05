@@ -57,7 +57,7 @@
         }
 
         /* Estilo dos livros */
-        .livros-container {
+        .book-list {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
@@ -128,19 +128,8 @@
     <main>
         <section id="livros">
             <h2>Livros Populares</h2>
-            <div class="livros-container">
-                <!-- Exemplos de livros -->
-                <div class="livro">
-                    <img src="livro1.jpg" alt="Livro 1">
-                    <h3>Título do Livro 1</h3>
-                    <p>Autor: Autor Exemplo</p>
-                </div>
-                <div class="livro">
-                    <img src="livro2.jpg" alt="Livro 2">
-                    <h3>Título do Livro 2</h3>
-                    <p>Autor: Autor Exemplo</p>
-                </div>
-                <!-- Adicionar mais livros aqui -->
+            <div class="book-list">
+                <!-- Livros serão carregados aqui pelo JavaScript -->
             </div>
         </section>
 
@@ -160,20 +149,6 @@
         <p>&copy; 2024 Biblioteca Amoras. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        document.getElementById('search-bar').addEventListener('input', function(event) {
-            const searchTerm = event.target.value.toLowerCase();
-            const livros = document.querySelectorAll('.livro');
-
-            livros.forEach(livro => {
-                const title = livro.querySelector('h3').textContent.toLowerCase();
-                if (title.includes(searchTerm)) {
-                    livro.style.display = 'block';
-                } else {
-                    livro.style.display = 'none';
-                }
-            });
-        });
-    </script>
+    <script src="integração.js"></script>
 </body>
 </html>

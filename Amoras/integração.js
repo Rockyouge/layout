@@ -1,16 +1,20 @@
 // Função para carregar livros do backend
 async function carregarLivros() {
     try {
-        const response = await fetch('http://localhost:8080/api/livros');
+        // Faz uma requisição GET para o backend
+        const response = await fetch('http://127.0.0.1:8000/livros/');
         if (!response.ok) {
             throw new Error('Erro ao buscar os livros');
         }
-        
-        const livros = await response.json();
-        const livrosContainer = document.querySelector('.livros-container');
-        
-        livrosContainer.innerHTML = ''; // Limpa o conteúdo atual
 
+        // Converte a resposta em JSON
+        const livros = await response.json();
+        const livrosContainer = document.querySelector('.book-list');
+        
+        // Limpa o conteúdo atual da lista de livros
+        livrosContainer.innerHTML = '';
+
+        // Itera sobre os livros recebidos e cria os elementos HTML
         livros.forEach(livro => {
             const livroElement = document.createElement('div');
             livroElement.classList.add('livro');
@@ -18,6 +22,8 @@ async function carregarLivros() {
                 <img src="${livro.imagem}" alt="${livro.titulo}">
                 <h3>${livro.titulo}</h3>
                 <p>Autor: ${livro.autor}</p>
+                <p>Publicado em: ${livro.publicadoEm}</p>
+                <p>Descrição: ${livro.descricao}</p>
             `;
             livrosContainer.appendChild(livroElement);
         });
@@ -39,3 +45,4 @@ document.getElementById('search-bar').addEventListener('input', function(event) 
 
 // Carrega os livros ao iniciar a página
 document.addEventListener('DOMContentLoaded', carregarLivros);
+
