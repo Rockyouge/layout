@@ -1,5 +1,6 @@
 // Função para carregar livros do backend
 async function carregarLivros() {
+    console.log("EU AQUI: carregarLivros")
     try {
         // Faz uma requisição GET para o backend
         const response = await fetch('http://127.0.0.1:8000/livros/');
@@ -9,6 +10,7 @@ async function carregarLivros() {
 
         // Converte a resposta em JSON
         const livros = await response.json();
+        console.log(livros)
         const livrosContainer = document.querySelector('.book-list');
         
         // Limpa o conteúdo atual da lista de livros
