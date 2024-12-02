@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Biblioteca Amoras</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (para ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
     <style>
         /* Reset básico */
         * {
@@ -14,42 +21,67 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            color: #ae1641;
+            font-family: 'Poppins', sans-serif;
+            background: #ae1641; /* Cor de fundo da página alterada para #ae1641 */
+            color: #ae1641; /* Cor do texto geral */
         }
 
         header {
-            background-color: #ae1641;
+            background: url('banner3.png') no-repeat center center; /* Colocando a imagem como fundo */
+            background-size: cover; /* Garantir que o banner ocupe toda a área */
             color: #fff;
-            padding: 1rem;
+            padding: 4rem 1rem; /* Diminui o padding superior */
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            position: relative;
         }
 
         header h1 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;  /* Aumentei o tamanho do título */
+            margin-bottom: 1rem;  /* Espaço entre o título e os botões */
+            position: relative;
+            z-index: 10;
+            margin-right: auto; /* Garantir que o título fique alinhado à esquerda */
         }
 
         .navbar ul {
             list-style: none;
             display: flex;
-        }
-
-        .navbar ul li {
-            margin-right: 1.5rem;
+            gap: 1.5rem;
         }
 
         .navbar ul li a {
             color: #fff;
             text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background-color: #ae1641;
+            transition: background-color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #800c24;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem; /* Distanciando um pouco da linha de navegação */
         }
 
         #search-bar {
             padding: 0.5rem;
             border-radius: 4px;
             border: none;
+            width: 200px;
+        }
+
+        .search-container i {
+            color: #ae1641;
+            font-size: 18px;
         }
 
         main {
@@ -74,11 +106,20 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .livro:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .livro img {
             max-width: 100%;
             height: auto;
+            border-radius: 8px;
         }
 
         .livro h3 {
@@ -86,11 +127,16 @@
         }
 
         /* Categorias */
+        #categorias {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
         .categorias-container {
             display: flex;
             justify-content: center;
             gap: 1rem;
-            margin-top: 1rem;
+            margin-top: 2rem;
         }
 
         .categoria {
@@ -100,14 +146,37 @@
             border-radius: 5px;
             cursor: pointer;
             text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .categoria:hover {
+            background-color: #800c24;
         }
 
         /* Rodapé */
         footer {
-            background-color: #ae1641;
+            background-color: #e9aaab;
             color: white;
             text-align: center;
             padding: 1rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .book-list {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .livro {
+                width: 100%;
+                max-width: 350px;
+            }
+        }
+
+        /* Alterando cor dos títulos das seções para branco */
+        main h2 {
+            color: white; /* Títulos das seções (Livros Populares e Categorias) em branco */
         }
     </style>
 </head>
@@ -117,11 +186,14 @@
         <nav class="navbar">
             <h1>Biblioteca Amoras</h1>
             <ul>
-                <li><a href="livros.html">Livros</a></li>
-                <li><a href="categorias.html">Categorias</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="livros.html"><i class="fas fa-book"></i> Livros</a></li>
+                <li><a href="categorias.html"><i class="fas fa-th-list"></i> Categorias</a></li>
+                <li><a href="contato.html"><i class="fas fa-envelope"></i> Contato</a></li>
             </ul>
-            <input type="text" id="search-bar" placeholder="Buscar livros...">
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" id="search-bar" placeholder="Buscar livros...">
+            </div>
         </nav>
     </header>
 
@@ -130,7 +202,6 @@
             <h2>Livros Populares</h2>
             <div class="book-list">
                 <!-- Livros serão carregados aqui pelo JavaScript -->
-                                <!-- Exemplos de livros -->
             </div>
         </section>
 

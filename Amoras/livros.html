@@ -14,61 +14,88 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #f7f7f7;
             color: #ae1641;
+            line-height: 1.6;
         }
 
         header {
             background-color: #ae1641;
             color: #fff;
-            padding: 1rem;
+            padding: 2rem 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         header h1 {
-            font-size: 1.5rem;
+            font-size: 2rem;
+            margin-bottom: 1rem;
         }
 
         .navbar ul {
             list-style: none;
             display: flex;
-        }
-
-        .navbar ul li {
-            margin-right: 1.5rem;
+            gap: 2rem;
         }
 
         .navbar ul li a {
             color: #fff;
             text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            background-color: #ae1641;
+            transition: background-color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #800c24;
         }
 
         main {
-            padding: 2rem;
+            padding: 2rem 3rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #ae1641;
+            margin-bottom: 2rem;
+            text-align: center;
         }
 
         .book-list {
             list-style-type: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
         .book-list li {
-            padding: 1rem;
             background-color: #fff;
+            border-radius: 10px;
+            padding: 1.5rem;
             border: 1px solid #ddd;
-            margin-bottom: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .book-list li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
 
         .book-list h3 {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             color: #ae1641;
+            margin-bottom: 1rem;
         }
 
         .book-list p {
             font-size: 1rem;
-            color: #ee3166;
+            color: #555;
+            margin-bottom: 1rem;
         }
 
         footer {
@@ -95,26 +122,8 @@
 
     <main>
         <h2>Lista Completa de Livros</h2>
-        <ul class="book-list">
-            <li>
-                <h3>Título do Livro 1</h3>
-                <p>Autor: Autor Exemplo</p>
-                <p>Publicado em: Data </p>
-                <p>Descrição: Este é um breve resumo do Livro 1.</p>
-            </li>
-            <li>
-                <h3>Título do Livro 2</h3>
-                <p>Autor: Autor Exemplo</p>
-                <p>Publicado em: Data </p>
-                <p>Descrição: Este é um breve resumo do Livro 2.</p>
-            </li>
-            <li>
-                <h3>Título do Livro 3</h3>
-                <p>Autor: Autor Exemplo</p>
-                <p>Publicado em: Data </p>
-                <p>Descrição: Este é um breve resumo do Livro 3.</p>
-            </li>
-            <!-- Adicionar mais livros conforme necessário -->
+        <ul class="book-list" id="book-list">
+            <!-- A lista de livros será carregada aqui pelo JavaScript -->
         </ul>
     </main>
 
@@ -122,5 +131,6 @@
         <p>&copy; 2024 Biblioteca Amoras. Todos os direitos reservados.</p>
     </footer>
     <script src="integração.js"></script>
+
 </body>
 </html>

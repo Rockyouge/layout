@@ -22,11 +22,11 @@ async function carregarLivros() {
             livroElement.classList.add('livro');
             
             // Verifica se a URL da imagem existe antes de tentar usá-la
-            const imagemSrc = livro.imagem ? livro.imagem : 'default-image.jpg'; // Coloque uma imagem padrão caso a URL da imagem não exista
-            
+            const imagemSrc = livro.imagem ? livro.imagem : 'placeholder.jpg';
+
             livroElement.innerHTML = `
-                <img src="${imagemSrc}" alt="${livro.titulo}">
-                <h3>${livro.titulo}</h3>
+                <img src="${imagemSrc}" alt="${livro.ttulo}">
+                <h3>${livro.título}</h3>
                 <p>Autor: ${livro.autor}</p>
                 <p>Publicado em: ${livro.publicadoEm}</p>
                 <p>Descrição: ${livro.descricao}</p>
