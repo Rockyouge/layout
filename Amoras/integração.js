@@ -24,8 +24,10 @@ async function carregarLivros() {
             // Verifica se a URL da imagem existe antes de tentar usá-la
             const imagemSrc = livro.imagem ? livro.imagem : 'placeholder.jpg';
 
+            console.log("HEEEEY EH A GENTE")
+            console.log(imagemSrc)
             livroElement.innerHTML = `
-                <img src="${imagemSrc}" alt="${livro.ttulo}">
+                <img src="${imagemSrc}" alt="${livro.titulo}">
                 <h3>${livro.título}</h3>
                 <p>Autor: ${livro.autor}</p>
                 <p>Publicado em: ${livro.publicadoEm}</p>
